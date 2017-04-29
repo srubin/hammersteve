@@ -4,7 +4,7 @@ lastSetDeviceTime = os.time()
 lastInputDevice = nil
 
 function audioDeviceChanged(arg)
-    if arg == 'dev#' then
+    if arg == 'dev#' or arg == 'dOut' then
         lastSetDeviceTime = os.time()
     elseif arg == 'dIn ' and os.time() - lastSetDeviceTime < 2 then
         inputDevice = hs.audiodevice.defaultInputDevice()
